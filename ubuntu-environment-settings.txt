@@ -1,0 +1,35 @@
+1. 中文输入法
+ibus-daemon -x -r -d
+
+2. 启动sshd
+/etc/init.d/ssh start/restart
+
+3. 安装mysql
+sudo apt-get install mysql-server
+
+4. 安装freeradius
+sudo apt-get install freeradius freeradius-ldap freeradius-mysql
+启动 freeradius
+sudo service freeradius start/stop/restart
+console中启动 freeradius
+sudo freeradius -X
+
+
+5. 启动nginx
+sudo /usr/sbin/nginx
+sudo nginx -s reload
+sudo nginx -s stop
+配置文件/etc/nginx/nginx.conf
+
+
+6. /etc/profile
+#Java Settings
+export JAVA_HOME=/opt/jdk1.8.0_60
+export PATH=/opt/gradle-1.11/bin:$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export P4PORT=172.18.100.50:1666
+export P4CLIENT=rapheal
+export P4USER=raphael.cheng
+export P4PASSWD=
+export CASSANDRA_HOME=/opt/apache-cassandra-2.1.9
+
