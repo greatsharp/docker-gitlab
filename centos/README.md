@@ -30,3 +30,15 @@ sudo gitlab-ctl reconfigure
 默认的管理员账号是root,如果你想更改默认管理员账号,请输入上面设置的新密码登录系统后修改帐号名.
 
 ![image](https://github.com/greatsharp/docker-gitlab/blob/master/centos/gitlab_first_login.png)
+
+
+5. 配置external url 配置GitLab显示的远程仓库的git@...和http(s)//...中的域名
+
+为使用户可以正确的获取到GitLab上显示的当前仓库的clone地址， GitLab需要你设置好哪个url才是用户可以访问到GitLab
+
+修改文件/etc/gitlab/gitlab.rb
+
+external_url "http://git.rapheal.sdc" #替换为你自己的地址
+
+运行 sudo gitlab-ctl reconfigure 使修改生效。
+![image](https://github.com/greatsharp/docker-gitlab/blob/master/centos/gitlab-external_url.png)
